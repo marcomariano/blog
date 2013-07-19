@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
+ 
+ 
   before_filter :find_post, only: [:show, :edit, :update, :destroy]
+  
+  http_basic_authenticate_with name: "dhh", password: "secret"
   
   # GET /posts
   # GET /posts.json

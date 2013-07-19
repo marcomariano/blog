@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
-  
+
   before_filter :find_post_comment
   before_filter :find_comment, only: [:update]
   
   
+  http_basic_authenticate_with name: "dhh", password: "secret"
   def index
     
     @comments = @post.comments
